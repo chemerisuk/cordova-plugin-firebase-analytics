@@ -1,0 +1,45 @@
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+xmlns:android="http://schemas.android.com/apk/res/android"
+           id="cordova-plugin-firebase-analytics"
+      version="0.9.0">
+
+    <name>FirebaseAnalyticsPlugin</name>
+    <description>Cordova plugin for Firebase Analytics</description>
+    <license>MIT</license>
+    <keywords>cordova</keywords>
+    <repo>https://github.com/chemerisuk/cordova-plugin-firebase-analytics</repo>
+    <issue>https://github.com/chemerisuk/cordova-plugin-firebase-analytics/issues</issue>
+
+    <js-module src="www/FirebaseAnalytics.js" name="FirebaseAnalyticsPlugin">
+        <merges target="cordova.plugins.firebase.analytics" />
+    </js-module>
+
+    <engines>
+        <engine name="cordova" version=">=3.3.0"/>
+    </engines>
+
+    <dependency id="cordova-plugin-firebase-core"/>
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="FirebaseAnalyticsPlugin">
+                <param name="ios-package" value="FirebaseAnalyticsPlugin" />
+            </feature>
+        </config-file>
+        <header-file src="src/ios/FirebaseAnalyticsPlugin.h" />
+        <source-file src="src/ios/FirebaseAnalyticsPlugin.m" />
+        <pod id="Firebase/Analytics" />
+    </platform>
+
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="FirebaseAnalyticsPlugin">
+                <param name="android-package" value="by.chemerisuk.cordova.firebase.FirebaseAnalyticsPlugin" />
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/by/chemerisuk/cordova/firebase/FirebaseAnalyticsPlugin.java"
+            target-dir="src/com/blakgeek/cordova/plugin/" />
+    </platform>
+
+</plugin>
