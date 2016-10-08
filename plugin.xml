@@ -18,7 +18,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <engine name="cordova" version=">=3.3.0"/>
     </engines>
 
-    <dependency id="cordova-plugin-firebase-core"/>
+    <dependency id="cordova-plugin-firebase-core" url="https://github.com/chemerisuk/cordova-plugin-firebase-core.git"/>
 
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
