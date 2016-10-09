@@ -43,7 +43,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         </config-file>
 
         <source-file src="src/android/by/chemerisuk/cordova/firebase/FirebaseAnalyticsPlugin.java"
-            target-dir="src/com/blakgeek/cordova/plugin/" />
+            target-dir="src/android/by/chemerisuk/cordova/firebase/" />
     </platform>
 
 </plugin>
