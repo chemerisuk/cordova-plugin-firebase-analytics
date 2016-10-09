@@ -15,10 +15,10 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     </js-module>
 
     <engines>
-        <engine name="cordova" version=">=3.3.0"/>
+        <engine name="cordova" version=">=3.5.0"/>
     </engines>
 
-    <dependency id="cordova-plugin-firebase-core" url="https://github.com/chemerisuk/cordova-plugin-firebase-core.git"/>
+    <dependency id="cordova-plugin-firebase-hooks" url="https://github.com/chemerisuk/cordova-plugin-firebase-hooks.git"/>
 
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
