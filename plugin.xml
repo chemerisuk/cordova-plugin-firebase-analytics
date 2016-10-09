@@ -42,6 +42,12 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             </feature>
         </config-file>
 
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.INTERNET" />
+        </config-file>
+
+        <framework src="com.google.firebase:firebase-core:+" />
+
         <source-file src="src/android/by/chemerisuk/cordova/firebase/FirebaseAnalyticsPlugin.java"
             target-dir="src/android/by/chemerisuk/cordova/firebase/" />
     </platform>
