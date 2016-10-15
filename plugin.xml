@@ -10,7 +10,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     <repo>https://github.com/chemerisuk/cordova-plugin-firebase-analytics</repo>
     <issue>https://github.com/chemerisuk/cordova-plugin-firebase-analytics/issues</issue>
 
-    <js-module src="www/FirebaseAnalytics.js" name="FirebaseAnalyticsPlugin">
+    <js-module src="www/FirebaseAnalytics.js" name="FirebaseAnalytics">
         <merges target="cordova.plugins.firebase.analytics" />
     </js-module>
 
@@ -22,8 +22,8 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
-            <feature name="FirebaseAnalyticsPlugin">
-                <param name="ios-package" value="FirebaseAnalyticsPlugin" />
+            <feature name="FirebaseAnalytics">
+                <param name="ios-package" value="FirebaseAnalytics" />
                 <param name="onload" value="true" />
             </feature>
         </config-file>
@@ -36,8 +36,8 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="FirebaseAnalyticsPlugin">
-                <param name="android-package" value="by.chemerisuk.cordova.firebase.FirebaseAnalyticsPlugin" />
+            <feature name="FirebaseAnalytics">
+                <param name="android-package" value="by.chemerisuk.cordova.firebase.FirebaseAnalytics" />
                 <param name="onload" value="true" />
             </feature>
         </config-file>
@@ -48,7 +48,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 
         <framework src="com.google.firebase:firebase-core:+" />
 
-        <source-file src="src/android/by/chemerisuk/cordova/firebase/FirebaseAnalyticsPlugin.java"
+        <source-file src="src/android/FirebaseAnalyticsPlugin.java"
             target-dir="src/by/chemerisuk/cordova/firebase/" />
     </platform>
 

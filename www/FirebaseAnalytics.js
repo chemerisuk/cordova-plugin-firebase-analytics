@@ -1,5 +1,5 @@
 var exec = require("cordova/exec");
-var PLUGIN_NAME = "FirebaseAnalyticsPlugin";
+var PLUGIN_NAME = "FirebaseAnalytics";
 
 module.exports = {
     logEvent: function(name, params, success, error) {
