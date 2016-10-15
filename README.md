@@ -1,10 +1,11 @@
 # cordova-plugin-firebase-analytics
 > Cordova plugin for [Firebase Analytics](https://firebase.google.com/docs/analytics/)
 
-
 ## Installation
 
     cordova plugin add cordova-plugin-firebase-analytics --save
+
+NOTE: on iOS in order to collect demographic, age, gender data etc. you should additionally [include `AdSupport.framework`](https://firebase.google.com/support/guides/analytics-adsupport) into your project.
 
 ## Supported Platforms
 

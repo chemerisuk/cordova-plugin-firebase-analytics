@@ -32,8 +32,6 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <source-file src="src/ios/FirebaseAnalyticsPlugin.m" />
 
         <pod id="Firebase/Analytics" />
-        <!-- https://firebase.google.com/support/guides/analytics-adsupport -->
-        <framework src="AdSupport.framework" weak="true" />
     </platform>
 
     <platform name="android">
