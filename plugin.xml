@@ -23,7 +23,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
             <feature name="FirebaseAnalytics">
-                <param name="ios-package" value="FirebaseAnalytics" />
+                <param name="ios-package" value="FirebaseAnalyticsPlugin" />
                 <param name="onload" value="true" />
             </feature>
         </config-file>
@@ -37,7 +37,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="FirebaseAnalytics">
-                <param name="android-package" value="by.chemerisuk.cordova.firebase.FirebaseAnalytics" />
+                <param name="android-package" value="by.chemerisuk.cordova.firebase.FirebaseAnalyticsPlugin" />
                 <param name="onload" value="true" />
             </feature>
         </config-file>
