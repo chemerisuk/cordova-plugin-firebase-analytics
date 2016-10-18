@@ -1,4 +1,4 @@
-# cordova-plugin-firebase-analytics
+# cordova-plugin-firebase-analytics<br>[![NPM version][npm-version]][npm-url] [![NPM downloads][npm-downloads]][npm-url]
 > Cordova plugin for [Firebase Analytics](https://firebase.google.com/docs/analytics/)
 
 ## Installation
@@ -36,3 +36,13 @@ window.cordova.plugins.firebase.analytics.setUserProperty("name1", "value1");
 ```
 
 Be aware of [automatically collected user properties](https://support.google.com/firebase/answer/6317486?hl=en&ref_topic=6317484).
+
+### setEnabled(_enabled_)
+Sets whether analytics collection is enabled for this app on this device.
+```js
+window.cordova.plugins.firebase.analytics.setEnabled(false);
+```
+
+[npm-url]: https://www.npmjs.com/package/cordova-plugin-firebase-analytics
+[npm-version]: https://img.shields.io/npm/v/cordova-plugin-firebase-analytics.svg
+[npm-downloads]: https://img.shields.io/npm/dt/cordova-plugin-firebase-analytics.svg

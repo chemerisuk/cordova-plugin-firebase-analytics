@@ -32,16 +32,20 @@ public class FirebaseAnalyticsPlugin extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        if (action.equals("logEvent")) {
+        if ("logEvent".equals(action)) {
             logEvent(callbackContext, args.getString(0), args.getJSONObject(1));
 
             return true;
-        } else if (action.equals("setUserId")) {
+        } else if ("setUserId".equals(action)) {
             setUserId(callbackContext, args.getString(0));
 
             return true;
-        } else if (action.equals("setUserProperty")) {
+        } else if ("setUserProperty".equals(action)) {
             setUserProperty(callbackContext, args.getString(0), args.getString(1));
+
+            return true;
+        } else if ("setEnabled".equals(action)) {
+            setEnabled(callbackContext, args.getString(0));
 
             return true;
         }
@@ -49,7 +53,7 @@ public class FirebaseAnalyticsPlugin extends CordovaPlugin {
         return false;
     }
 
-    private void logEvent(final CallbackContext callbackContext, final String name, final JSONObject params) throws JSONException {
+    private void logEvent(CallbackContext callbackContext, String name, JSONObject params) throws JSONException {
         Bundle bundle = new Bundle();
         Iterator iter = params.keys();
 
@@ -69,14 +73,20 @@ public class FirebaseAnalyticsPlugin extends CordovaPlugin {
         callbackContext.success();
     }
 
-    private void setUserId(final CallbackContext callbackContext, final String userId) {
+    private void setUserId(CallbackContext callbackContext, String userId) {
         this.firebaseAnalytics.setUserId(userId);
 
         callbackContext.success();
     }
 
-    private void setUserProperty(final CallbackContext callbackContext, final String name, final String value) {
+    private void setUserProperty(CallbackContext callbackContext, String name, String value) {
         this.firebaseAnalytics.setUserProperty(name, value);
+
+        callbackContext.success();
+    }
+
+    private void setEnabled(CallbackContext callbackContext, String enabled) {
+        this.firebaseAnalytics.setAnalyticsCollectionEnabled(enabled === "true");
 
         callbackContext.success();
     }

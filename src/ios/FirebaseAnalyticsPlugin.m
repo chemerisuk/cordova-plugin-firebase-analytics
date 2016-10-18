@@ -41,4 +41,14 @@
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
+- (void)setEnabled:(CDVInvokedUrlCommand *)command {
+    NSString* enabledStr = [command.arguments objectAtIndex:0];
+    BOOL enabled = [enabledStr isEqualToString:@"true"];
+
+    [[FIRAnalyticsConfiguration sharedInstance] setAnalyticsCollectionEnabled:enabled];
+
+    CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
 @end

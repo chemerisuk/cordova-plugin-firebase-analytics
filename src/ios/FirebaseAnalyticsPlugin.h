@@ -5,5 +5,6 @@
 - (void)logEvent:(CDVInvokedUrlCommand*)command;
 - (void)setUserId:(CDVInvokedUrlCommand*)command;
 - (void)setUserProperty:(CDVInvokedUrlCommand*)command;
+- (void)setEnabled:(CDVInvokedUrlCommand*)command;
 
 @end
