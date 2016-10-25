@@ -13,5 +13,8 @@ module.exports = {
     },
     setEnabled: function(enabled) {
         exec(success, error, PLUGIN_NAME, "setEnabled", [String(enabled !== false)]);
+    },
+    setCurrentScreen: function(name) {
+        exec(success, error, PLUGIN_NAME, "setCurrentScreen", [name]);
     }
 };

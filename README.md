@@ -43,6 +43,12 @@ Sets whether analytics collection is enabled for this app on this device.
 window.cordova.plugins.firebase.analytics.setEnabled(false);
 ```
 
+### setCurrentScreen(_name_)
+Sets the current screen name, which specifies the current visual context in your app. This helps identify the areas in your app where users spend their time and how they interact with your app.
+```js
+window.cordova.plugins.firebase.analytics.setCurrentScreen("User profile");
+```
+
 [npm-url]: https://www.npmjs.com/package/cordova-plugin-firebase-analytics
 [npm-version]: https://img.shields.io/npm/v/cordova-plugin-firebase-analytics.svg
 [npm-downloads]: https://img.shields.io/npm/dt/cordova-plugin-firebase-analytics.svg
