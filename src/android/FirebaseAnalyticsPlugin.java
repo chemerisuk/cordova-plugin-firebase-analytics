@@ -95,7 +95,7 @@ public class FirebaseAnalyticsPlugin extends CordovaPlugin {
         callbackContext.success();
     }
 
-    private void setCurrentScreen(callbackContext, String name) {
+    private void setCurrentScreen(CallbackContext callbackContext, String name) {
         this.firebaseAnalytics.setCurrentScreen(
             this.cordova.getActivity(), name, null);
 
