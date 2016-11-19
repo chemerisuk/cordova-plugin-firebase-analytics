@@ -26,5 +26,8 @@
     "ecosystem:cordova",
     "cordova-android",
     "cordova-ios"
-  ]
+  ],
+  "scripts": {
+    "version": "cordova-version-sync"
+  }
 }
