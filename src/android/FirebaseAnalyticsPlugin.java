@@ -95,17 +95,17 @@ public class FirebaseAnalyticsPlugin extends CordovaPlugin {
         callbackContext.success();
     }
 
-    private void setCurrentScreen(CallbackContext callbackContext, final String name) {
-		cordova.getActivity().runOnUiThread(new Runnable() {
-			public void run() {
-				FirebaseAnalyticsPlugin.this.firebaseAnalytics.setCurrentScreen(
-					FirebaseAnalyticsPlugin.this.cordova.getActivity(),
-					name,
-					null
-				);
-			}
-		});
+    private void setCurrentScreen(final CallbackContext callbackContext, final String screenName) {
+        cordova.getActivity().runOnUiThread(new Runnable() {
+            public void run() {
+                firebaseAnalytics.setCurrentScreen(
+                    cordova.getActivity(),
+                    screenName,
+                    null
+                );
 
-		callbackContext.success();
-	}
+                callbackContext.success();
+            }
+        });
+    }
 }
