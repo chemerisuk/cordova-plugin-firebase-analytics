@@ -45,7 +45,7 @@ public class FirebaseAnalyticsPlugin extends CordovaPlugin {
 
             return true;
         } else if ("setEnabled".equals(action)) {
-            setEnabled(callbackContext, args.getString(0));
+            setEnabled(callbackContext, args.getBoolean(0));
 
             return true;
         } else if ("setCurrentScreen".equals(action)) {
@@ -89,8 +89,8 @@ public class FirebaseAnalyticsPlugin extends CordovaPlugin {
         callbackContext.success();
     }
 
-    private void setEnabled(CallbackContext callbackContext, String enabled) {
-        this.firebaseAnalytics.setAnalyticsCollectionEnabled(enabled == "true");
+    private void setEnabled(CallbackContext callbackContext, boolean enabled) {
+        this.firebaseAnalytics.setAnalyticsCollectionEnabled(enabled);
 
         callbackContext.success();
     }

@@ -42,8 +42,7 @@
 }
 
 - (void)setEnabled:(CDVInvokedUrlCommand *)command {
-    NSString* enabledStr = [command.arguments objectAtIndex:0];
-    BOOL enabled = [enabledStr isEqualToString:@"true"];
+    bool enabled = [[command.arguments objectAtIndex:0] boolValue];
 
     [[FIRAnalyticsConfiguration sharedInstance] setAnalyticsCollectionEnabled:enabled];
 
