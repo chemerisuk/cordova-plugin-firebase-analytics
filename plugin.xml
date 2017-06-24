@@ -32,7 +32,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <dependency id="cordova-plugin-cocoapod-support"/>
         <pods-config ios-min-version="7.0" uses-frameworks="true"/>
 
-        <pod id="Firebase/Analytics" version="~> 4.0.0"/>
+        <pod id="Firebase/Core" version="~> 4.0.0"/>
     </platform>
 
     <platform name="android">
