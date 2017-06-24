@@ -18,8 +18,6 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <engine name="cordova" version=">=3.5.0"/>
     </engines>
 
-    <dependency id="cordova-plugin-firebase-hooks"/>
-
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
             <feature name="FirebaseAnalytics">
@@ -30,6 +28,9 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 
         <header-file src="src/ios/FirebaseAnalyticsPlugin.h" />
         <source-file src="src/ios/FirebaseAnalyticsPlugin.m" />
+
+        <dependency id="cordova-plugin-cocoapod-support"/>
+        <pods-config ios-min-version="7.0" uses-frameworks="true"/>
 
         <pod id="Firebase/Analytics" />
     </platform>
@@ -46,7 +47,8 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             <uses-permission android:name="android.permission.INTERNET" />
         </config-file>
 
-        <framework src="com.google.firebase:firebase-core:+" />
+        <framework src="com.google.firebase:firebase-core:10.2.+" />
+        <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
 
         <source-file src="src/android/FirebaseAnalyticsPlugin.java"
             target-dir="src/by/chemerisuk/cordova/firebase/" />
