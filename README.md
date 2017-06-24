@@ -5,7 +5,18 @@
 
     cordova plugin add cordova-plugin-firebase-analytics --save
 
-Go yo firebase console and export `google-services.json` and `GoogleService-Info.plist`. Put those files into the root of your cordova app folder.
+Go yo firebase console and export `google-services.json` and `GoogleService-Info.plist`. Put those files into `platforms/android` and `platforms/ios` accordingly.
+
+##### Build Error: Failed to apply plugin [class 'com.google.gms.googleservices.GoogleServicesPlugin']
+It looks like you have another dependency on a google play services lib with a generic verison `*`. You have to fix ALL dependency version(s) to be more more specific like `10.2.+`.
+
+##### Build Error: Could not generate a proxy class for class com.google.gms.googleservices.GoogleServicesTask.
+Open `platform/android/build.gradle` and change version of the first `com.android.tools.build:gradle`:
+
+    classpath 'com.android.tools.build:gradle:1.2.3+'
+
+##### Duplicate resources: .../platforms/android/build/generated/res/google-services/armv7/debug/values/values.xml:string/google_api_key, .../platforms/android/res/values/strings.xml:string/google_api_key
+Remove `google_api_key` and `google_app_id` from any existing xml file from `platform/android/res/` folder. Those values now come from an automatically generated `values.xml`.
 
 NOTE: on iOS in order to collect demographic, age, gender data etc. you should additionally [include `AdSupport.framework`](https://firebase.google.com/support/guides/analytics-adsupport) into your project.
 
