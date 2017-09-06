@@ -51,20 +51,6 @@ Sets the current screen name, which specifies the current visual context in your
 window.cordova.plugins.firebase.analytics.setCurrentScreen("User profile");
 ```
 
-## FAQ
-
-#### Build Error: Failed to apply plugin [class 'com.google.gms.googleservices.GoogleServicesPlugin']
-It looks like you have another dependency on a google play services lib with a generic verison `*`. You have to fix ALL dependency version(s) to be more more specific like `11.0.+`. In order to do that fix version strings for any play services library you have in `platforms/android/project.properties`.
-
-#### Build Error: Could not generate a proxy class for class com.google.gms.googleservices.GoogleServicesTask.
-Open `platform/android/build.gradle` and change version of the first `com.android.tools.build:gradle`:
-
-    classpath 'com.android.tools.build:gradle:1.2.3+'
-
-#### Duplicate resources: .../platforms/android/build/generated/res/google-services/armv7/debug/values/values.xml:string/google_api_key, .../platforms/android/res/values/strings.xml:string/google_api_key
-Remove `google_api_key` and `google_app_id` from any existing xml file from `platform/android/res/` folder. Those values now come from an automatically generated `values.xml`.
-
-
 [npm-url]: https://www.npmjs.com/package/cordova-plugin-firebase-analytics
 [npm-version]: https://img.shields.io/npm/v/cordova-plugin-firebase-analytics.svg
 [npm-downloads]: https://img.shields.io/npm/dt/cordova-plugin-firebase-analytics.svg
