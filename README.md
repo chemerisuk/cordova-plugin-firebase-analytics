@@ -5,6 +5,8 @@
 
     cordova plugin add cordova-plugin-firebase-analytics --save
 
+If you need to set a specific dependency version on Android then use variable `FIREBASE_VERSION`.
+
 Plugin depends on [cordova-support-google-services](https://github.com/chemerisuk/cordova-support-google-services) for setting up google services properly. Please read the [README](https://github.com/chemerisuk/cordova-support-google-services/blob/master/README.md) carefully in order to avoid common issues with a project configuration.
 
 NOTE: on iOS in order to collect demographic, age, gender data etc. you should additionally [include `AdSupport.framework`](https://firebase.google.com/support/guides/analytics-adsupport) into your project.
