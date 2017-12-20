@@ -32,6 +32,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <source-file src="src/ios/FirebaseAnalyticsPlugin.m" />
 
         <framework src="Firebase/Analytics" type="podspec" spec="~> 4.1"/>
+        <framework src="GoogleTagManager" type="podspec" spec="~> 6.0"/>
     </platform>
 
     <platform name="android">
@@ -51,6 +52,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <dependency id="cordova-support-google-services" version="~1.0.0"/>
 
         <framework src="com.google.firebase:firebase-core:$FIREBASE_VERSION" />
+        <framework src="com.google.android.gms:play-services-tagmanager:$FIREBASE_VERSION" />
 
         <source-file src="src/android/FirebaseAnalyticsPlugin.java"
             target-dir="src/by/chemerisuk/cordova/firebase/" />
