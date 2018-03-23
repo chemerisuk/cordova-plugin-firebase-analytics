@@ -1,7 +1,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
 xmlns:android="http://schemas.android.com/apk/res/android"
            id="cordova-plugin-firebase-analytics"
-      version="0.12.1">
+      version="0.13.0">
 
     <name>FirebaseAnalyticsPlugin</name>
     <description>Cordova plugin for Firebase Analytics</description>
@@ -31,12 +31,12 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <header-file src="src/ios/FirebaseAnalyticsPlugin.h" />
         <source-file src="src/ios/FirebaseAnalyticsPlugin.m" />
 
-        <framework src="Firebase/Analytics" type="podspec" spec="~> 4.1"/>
+        <framework src="Firebase/Core" type="podspec" spec="~> 4.1"/>
         <framework src="GoogleTagManager" type="podspec" spec="~> 6.0"/>
     </platform>
 
     <platform name="android">
-        <preference name="FIREBASE_VERSION" default="11.0.+"/>
+        <preference name="FIREBASE_VERSION" default="11.6.+"/>
 
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="FirebaseAnalytics">
@@ -49,7 +49,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             <uses-permission android:name="android.permission.INTERNET" />
         </config-file>
 
-        <dependency id="cordova-support-google-services" version="~1.0.0"/>
+        <dependency id="cordova-support-google-services" version="~1.1.0"/>
 
         <framework src="com.google.firebase:firebase-core:$FIREBASE_VERSION" />
         <framework src="com.google.android.gms:play-services-tagmanager:$FIREBASE_VERSION" />
