@@ -31,11 +31,11 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <header-file src="src/ios/FirebaseAnalyticsPlugin.h" />
         <source-file src="src/ios/FirebaseAnalyticsPlugin.m" />
 
-        <framework src="Firebase/Core" type="podspec" spec="~> 4.1"/>
+        <framework src="Firebase/Core" type="podspec" spec="~> 5.0"/>
     </platform>
 
     <platform name="android">
-        <preference name="FIREBASE_VERSION" default="11.6.+"/>
+        <preference name="FIREBASE_VERSION" default="15.0.+"/>
 
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="FirebaseAnalytics">
