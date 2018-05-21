@@ -4,6 +4,9 @@ import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 
+import by.chemerisuk.cordova.support.CordovaMethod;
+import by.chemerisuk.cordova.support.ReflectiveCordovaPlugin;
+
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 import org.apache.cordova.CordovaPlugin;
@@ -16,7 +19,7 @@ import org.json.JSONObject;
 import java.util.Iterator;
 
 
-public class FirebaseAnalyticsPlugin extends CordovaPlugin {
+public class FirebaseAnalyticsPlugin extends ReflectiveCordovaPlugin {
     private static final String TAG = "FirebaseAnalyticsPlugin";
 
     private FirebaseAnalytics firebaseAnalytics;
@@ -30,34 +33,8 @@ public class FirebaseAnalyticsPlugin extends CordovaPlugin {
         this.firebaseAnalytics = FirebaseAnalytics.getInstance(context);
     }
 
-    @Override
-    public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        if ("logEvent".equals(action)) {
-            logEvent(callbackContext, args.getString(0), args.getJSONObject(1));
-
-            return true;
-        } else if ("setUserId".equals(action)) {
-            setUserId(callbackContext, args.getString(0));
-
-            return true;
-        } else if ("setUserProperty".equals(action)) {
-            setUserProperty(callbackContext, args.getString(0), args.getString(1));
-
-            return true;
-        } else if ("setEnabled".equals(action)) {
-            setEnabled(callbackContext, args.getBoolean(0));
-
-            return true;
-        } else if ("setCurrentScreen".equals(action)) {
-            setCurrentScreen(callbackContext, args.getString(0));
-
-            return true;
-        }
-
-        return false;
-    }
-
-    private void logEvent(CallbackContext callbackContext, String name, JSONObject params) throws JSONException {
+    @CordovaMethod
+    private void logEvent(String name, JSONObject params, CallbackContext callbackContext) throws JSONException {
         Bundle bundle = new Bundle();
         Iterator iter = params.keys();
 
@@ -77,35 +54,35 @@ public class FirebaseAnalyticsPlugin extends CordovaPlugin {
         callbackContext.success();
     }
 
-    private void setUserId(CallbackContext callbackContext, String userId) {
+    @CordovaMethod
+    private void setUserId(String userId, CallbackContext callbackContext) {
         this.firebaseAnalytics.setUserId(userId);
 
         callbackContext.success();
     }
 
-    private void setUserProperty(CallbackContext callbackContext, String name, String value) {
+    @CordovaMethod
+    private void setUserProperty(String name, String value, CallbackContext callbackContext) {
         this.firebaseAnalytics.setUserProperty(name, value);
 
         callbackContext.success();
     }
 
-    private void setEnabled(CallbackContext callbackContext, boolean enabled) {
+    @CordovaMethod
+    private void setEnabled(boolean enabled, CallbackContext callbackContext) {
         this.firebaseAnalytics.setAnalyticsCollectionEnabled(enabled);
 
         callbackContext.success();
     }
 
-    private void setCurrentScreen(final CallbackContext callbackContext, final String screenName) {
-        cordova.getActivity().runOnUiThread(new Runnable() {
-            public void run() {
-                firebaseAnalytics.setCurrentScreen(
-                    cordova.getActivity(),
-                    screenName,
-                    null
-                );
+    @CordovaMethod(ui = true)
+    private void setCurrentScreen(String screenName, CallbackContext callbackContext) {
+        firebaseAnalytics.setCurrentScreen(
+            cordova.getActivity(),
+            screenName,
+            null
+        );
 
-                callbackContext.success();
-            }
-        });
+        callbackContext.success();
     }
 }
