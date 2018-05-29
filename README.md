@@ -5,9 +5,9 @@
 
     cordova plugin add cordova-plugin-firebase-analytics --save
 
-If you need to set a specific dependency version on Android then use variable `FIREBASE_VERSION`.
-
 Plugin depends on [cordova-support-google-services](https://github.com/chemerisuk/cordova-support-google-services) for setting up google services properly. Please read the [README](https://github.com/chemerisuk/cordova-support-google-services/blob/master/README.md) carefully in order to avoid common issues with a project configuration.
+
+Use variable `FIREBASE_CORE_VERSION` to override dependency version on Android.
 
 NOTE: on iOS in order to collect demographic, age, gender data etc. you should additionally [include `AdSupport.framework`](https://firebase.google.com/support/guides/analytics-adsupport) into your project.
 
@@ -52,6 +52,12 @@ cordova.plugins.firebase.analytics.setCurrentScreen("User profile");
 Sets whether analytics collection is enabled for this app on this device.
 ```js
 cordova.plugins.firebase.analytics.setEnabled(false);
+```
+
+### resetAnalyticsData()
+Clears all analytics data for this instance from the device and resets the app instance ID
+```js
+cordova.plugins.firebase.analytics.resetAnalyticsData();
 ```
 
 [npm-url]: https://www.npmjs.com/package/cordova-plugin-firebase-analytics
