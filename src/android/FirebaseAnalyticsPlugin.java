@@ -36,16 +36,22 @@ public class FirebaseAnalyticsPlugin extends ReflectiveCordovaPlugin {
     @CordovaMethod
     private void logEvent(String name, JSONObject params, CallbackContext callbackContext) throws JSONException {
         Bundle bundle = new Bundle();
-        Iterator iter = params.keys();
+        Iterator<String> it = params.keys();
 
-        while (iter.hasNext()) {
-            String key = (String) iter.next();
+        while (it.hasNext()) {
+            String key = it.next();
             Object value = params.get(key);
 
-            if (value instanceof Integer || value instanceof Double) {
-                bundle.putFloat(key, ((Number) value).floatValue());
+            if (value instanceof String) {
+                bundle.putString(key, (String)value);
+            } else if (value instanceof Integer) {
+                bundle.putInt(key, (Integer)value);
+            } else if (value instanceof Double) {
+                bundle.putDouble(key, (Double)value);
+            } else if (value instanceof Long) {
+                bundle.putLong(key, (Long)value);
             } else {
-                bundle.putString(key, value.toString());
+                Log.w(TAG, "Value for key " + key + " not one of (String, Integer, Double, Long)");
             }
         }
 
@@ -67,7 +73,7 @@ public class FirebaseAnalyticsPlugin extends ReflectiveCordovaPlugin {
 
         callbackContext.success();
     }
-    
+
     @CordovaMethod
     private void resetAnalyticsData(CallbackContext callbackContext) {
         this.firebaseAnalytics.resetAnalyticsData();
