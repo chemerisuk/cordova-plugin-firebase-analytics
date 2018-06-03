@@ -32,6 +32,11 @@ public class FirebaseAnalyticsPlugin extends ReflectiveCordovaPlugin {
 
         this.firebaseAnalytics = FirebaseAnalytics.getInstance(context);
     }
+    
+    @CordovaMethod
+    private void getAppInstanceId(CallbackContext callbackContext) {
+        callbackContext.success(this.firebaseAnalytics.getAppInstanceId());
+    }
 
     @CordovaMethod
     private void logEvent(String name, JSONObject params, CallbackContext callbackContext) throws JSONException {
