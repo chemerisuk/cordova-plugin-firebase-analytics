@@ -6,6 +6,7 @@ import android.util.Log;
 
 import by.chemerisuk.cordova.support.CordovaMethod;
 import by.chemerisuk.cordova.support.ReflectiveCordovaPlugin;
+import by.chemerisuk.cordova.support.ReflectiveCordovaPlugin.ExecutionThread;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
 
@@ -88,7 +89,7 @@ public class FirebaseAnalyticsPlugin extends ReflectiveCordovaPlugin {
         callbackContext.success();
     }
 
-    @CordovaMethod(ui = true)
+    @CordovaMethod(ExecutionThread.UI)
     private void setCurrentScreen(String screenName, CallbackContext callbackContext) {
         firebaseAnalytics.setCurrentScreen(
             cordova.getActivity(),
