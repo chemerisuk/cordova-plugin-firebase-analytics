@@ -6,14 +6,10 @@ import android.util.Log;
 
 import by.chemerisuk.cordova.support.CordovaMethod;
 import by.chemerisuk.cordova.support.ReflectiveCordovaPlugin;
-import by.chemerisuk.cordova.support.ReflectiveCordovaPlugin.ExecutionThread;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
 
-import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
-
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
