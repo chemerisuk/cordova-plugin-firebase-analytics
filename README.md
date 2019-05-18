@@ -1,4 +1,4 @@
-# cordova-plugin-firebase-analytics<br>[![NPM version][npm-version]][npm-url] [![NPM downloads][npm-downloads]][npm-url]
+# cordova-plugin-firebase-analytics<br>[![NPM version][npm-version]][npm-url] [![NPM downloads][npm-downloads]][npm-url] [![Twitter][twitter-follow]][twitter-url]
 > Cordova plugin for [Firebase Analytics](https://firebase.google.com/docs/analytics/)
 
 ## Installation
@@ -63,3 +63,5 @@ cordova.plugins.firebase.analytics.resetAnalyticsData();
 [npm-url]: https://www.npmjs.com/package/cordova-plugin-firebase-analytics
 [npm-version]: https://img.shields.io/npm/v/cordova-plugin-firebase-analytics.svg
 [npm-downloads]: https://img.shields.io/npm/dm/cordova-plugin-firebase-analytics.svg
+[twitter-url]: https://twitter.com/chemerisuk
+[twitter-follow]: https://img.shields.io/twitter/follow/chemerisuk.svg?style=social&label=Follow%20me
