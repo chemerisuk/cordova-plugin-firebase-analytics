@@ -32,8 +32,6 @@ Plugin depends on [cordova-support-google-services](https://github.com/chemerisu
 
 Use variable `FIREBASE_CORE_VERSION` to override dependency version on Android.
 
-Use variable `POD_FIREBASE_VERSION` to override dependency version on iOS.
-
 NOTE: on iOS in order to collect demographic, age, gender data etc. you should additionally [include `AdSupport.framework`](https://firebase.google.com/support/guides/analytics-adsupport) into your project.
 
 ## Methods
