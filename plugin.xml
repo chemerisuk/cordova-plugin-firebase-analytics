@@ -36,7 +36,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                 <source url="https://github.com/CocoaPods/Specs.git"/>
             </config>
             <pods>
-                <pod name="Firebase/Analytics" spec="~> 6.2.0" />
+                <pod name="Firebase/Analytics" spec="~> 6.3.0" />
             </pods>
         </podspec>
     </platform>
