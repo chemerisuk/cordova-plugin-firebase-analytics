@@ -17,6 +17,11 @@ module.exports = {
             exec(resolve, reject, PLUGIN_NAME, "setUserProperty", [name, value]);
         });
     },
+    resetAnalyticsData: function() {
+        return new Promise(function(resolve, reject) {
+            exec(resolve, reject, PLUGIN_NAME, "resetAnalyticsData", []);
+        });
+    },
     setEnabled: function(enabled) {
         return new Promise(function(resolve, reject) {
             exec(resolve, reject, PLUGIN_NAME, "setEnabled", [enabled]);
