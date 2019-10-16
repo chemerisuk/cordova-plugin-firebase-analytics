@@ -7,5 +7,6 @@
 - (void)setUserProperty:(CDVInvokedUrlCommand*)command;
 - (void)setEnabled:(CDVInvokedUrlCommand*)command;
 - (void)setCurrentScreen:(CDVInvokedUrlCommand*)command;
+- (void)resetAnalyticsData:(CDVInvokedUrlCommand*)command;
 
 @end
