@@ -42,7 +42,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     </platform>
 
     <platform name="android">
-        <preference name="FIREBASE_CORE_VERSION" default="17.0.+"/>
+        <preference name="FIREBASE_ANALYTICS_VERSION" default="17.2.+"/>
 
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="FirebaseAnalytics">
@@ -58,7 +58,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <dependency id="cordova-support-android-plugin" version="~1.0.0"/>
         <dependency id="cordova-support-google-services" version="^1.3.0"/>
 
-        <framework src="com.google.firebase:firebase-core:$FIREBASE_CORE_VERSION" />
+        <framework src="com.google.firebase:firebase-analytics:$FIREBASE_ANALYTICS_VERSION" />
 
         <source-file src="src/android/FirebaseAnalyticsPlugin.java"
             target-dir="src/by/chemerisuk/cordova/firebase/" />
