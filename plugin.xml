@@ -20,12 +20,22 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <engine name="cordova-ios" version=">=5.0.0"/>
     </engines>
 
+    <preference name="FIREBASE_ANALYTICS_COLLECTION_ENABLED" default="true" />
+
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
             <feature name="FirebaseAnalytics">
                 <param name="ios-package" value="FirebaseAnalyticsPlugin" />
-                <param name="onload" value="true" />
+                <param name="onload" value="$FIREBASE_ANALYTICS_COLLECTION_ENABLED" />
             </feature>
+        </config-file>
+
+        <!--
+            use a bit hacky method to set boolean value as a string:
+            https://developer.apple.com/documentation/foundation/nsstring/1409420-boolvalue?preferredLanguage=occ
+        -->
+        <config-file target="*-Info.plist" parent="FIREBASE_ANALYTICS_COLLECTION_ENABLED">
+            <string>$FIREBASE_ANALYTICS_COLLECTION_ENABLED</string>
         </config-file>
 
         <header-file src="src/ios/FirebaseAnalyticsPlugin.h" />
@@ -47,12 +57,16 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="FirebaseAnalytics">
                 <param name="android-package" value="by.chemerisuk.cordova.firebase.FirebaseAnalyticsPlugin" />
-                <param name="onload" value="true" />
+                <param name="onload" value="$FIREBASE_ANALYTICS_COLLECTION_ENABLED" />
             </feature>
         </config-file>
 
         <config-file target="AndroidManifest.xml" parent="/*">
             <uses-permission android:name="android.permission.INTERNET" />
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <meta-data android:name="firebase_analytics_collection_enabled" android:value="$FIREBASE_ANALYTICS_COLLECTION_ENABLED" />
         </config-file>
 
         <dependency id="cordova-support-android-plugin" version="~1.0.0"/>
