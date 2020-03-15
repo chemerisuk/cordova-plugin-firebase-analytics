@@ -56,7 +56,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         </config-file>
 
         <dependency id="cordova-support-android-plugin" version="~1.0.0"/>
-        <dependency id="cordova-support-google-services" version="^1.3.0"/>
+        <dependency id="cordova-support-google-services" version="^1.3.2"/>
 
         <framework src="com.google.firebase:firebase-analytics:$FIREBASE_ANALYTICS_VERSION" />
 
