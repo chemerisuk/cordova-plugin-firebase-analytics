@@ -11,6 +11,7 @@
 
 - [Supported platforms](#supported-platforms)
 - [Installation](#installation)
+- [Disable analytics data collection](#disable-analytics-data-collection)
 - [Methods](#methods)
 
 <!-- /MarkdownTOC -->
@@ -33,6 +34,13 @@ Plugin depends on [cordova-support-google-services](https://github.com/chemerisu
 Use variable `FIREBASE_ANALYTICS_VERSION` to override dependency version on Android.
 
 NOTE: on iOS in order to collect demographic, age, gender data etc. you should additionally [include `AdSupport.framework`](https://firebase.google.com/support/guides/analytics-adsupport) into your project.
+
+## Disable analytics data collection
+In some cases, you may wish to temporarily or permanently disable collection of Analytics data. You can set the value of variable `FIREBASE_ANALYTICS_COLLECTION_ENABLED` to `false` to prevent collecting any user data:
+
+    $ cordova plugin add cordova-plugin-firebase-analytics --variable FIREBASE_ANALYTICS_COLLECTION_ENABLED=false
+
+Later you can re-enable analytics data collection (for instance after getting end-user consent) using method [setEnabled](#setenabledenabled).
 
 ## Methods
 Every method returns a promise that fulfills when a call was successful.
