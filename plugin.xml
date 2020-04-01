@@ -46,13 +46,13 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                 <source url="https://cdn.cocoapods.org/"/>
             </config>
             <pods>
-                <pod name="Firebase/Analytics" spec="~> 6.19.0" />
+                <pod name="Firebase/Analytics" spec="~> 6.21.0" />
             </pods>
         </podspec>
     </platform>
 
     <platform name="android">
-        <preference name="FIREBASE_ANALYTICS_VERSION" default="17.2.+"/>
+        <preference name="FIREBASE_ANALYTICS_VERSION" default="17.3.+"/>
 
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="FirebaseAnalytics">
