@@ -35,9 +35,12 @@ module.exports = {
             exec(resolve, reject, PLUGIN_NAME, "setEnabled", [enabled]);
         });
     },
-    setCurrentScreen: function(name) {
+    setCurrentScreen: function(screenName, screenClass) {
+        if (typeof screenClass !== "string") {
+            screenClass = screenName;
+        }
         return new Promise(function(resolve, reject) {
-            exec(resolve, reject, PLUGIN_NAME, "setCurrentScreen", [name]);
+            exec(resolve, reject, PLUGIN_NAME, "setCurrentScreen", [screenName, screenClass]);
         });
     }
 };

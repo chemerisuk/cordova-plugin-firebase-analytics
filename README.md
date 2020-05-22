@@ -68,8 +68,8 @@ cordova.plugins.firebase.analytics.setUserProperty("name1", "value1");
 
 Be aware of [automatically collected user properties](https://support.google.com/firebase/answer/6317486?hl=en&ref_topic=6317484).
 
-### setCurrentScreen(_name_)
-Sets the current screen name, which specifies the current visual context in your app. This helps identify the areas in your app where users spend their time and how they interact with your app.
+### setCurrentScreen(_screenName_, _screenClass_)
+Sets the current screen name and screen class, which specifies the current visual context in your app. This helps identify the areas in your app where users spend their time and how they interact with your app.
 ```js
 cordova.plugins.firebase.analytics.setCurrentScreen("User profile");
 ```
