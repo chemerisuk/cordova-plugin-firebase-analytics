@@ -55,12 +55,15 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <preference name="FIREBASE_ANALYTICS_VERSION" default="17.4.+"/>
 
         <config-file target="res/xml/config.xml" parent="/*">
-            <preference name="GradlePluginGoogleServicesEnabled" value="true" />
-            <preference name="GradlePluginGoogleServicesVersion" value="4.3.3" />
             <feature name="FirebaseAnalytics">
                 <param name="android-package" value="by.chemerisuk.cordova.firebase.FirebaseAnalyticsPlugin" />
                 <param name="onload" value="$FIREBASE_ANALYTICS_COLLECTION_ENABLED" />
             </feature>
+        </config-file>
+
+        <config-file target="config.xml" parent="/*">
+            <preference name="GradlePluginGoogleServicesEnabled" value="true" />
+            <preference name="GradlePluginGoogleServicesVersion" value="4.3.3" />
         </config-file>
 
         <config-file target="AndroidManifest.xml" parent="/*">
