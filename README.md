@@ -31,7 +31,7 @@ If you get an error about CocoaPods being unable to find compatible versions, ru
 
 Plugin depends on [cordova-support-google-services](https://github.com/chemerisuk/cordova-support-google-services) for setting up google services properly. Please read the [README](https://github.com/chemerisuk/cordova-support-google-services/blob/master/README.md) carefully in order to avoid common issues with a project configuration.
 
-Use variable `FIREBASE_ANALYTICS_VERSION` to override dependency version on Android.
+Use variables `ANDROID_FIREBASE_ANALYTICS_VERSION` or `IOS_FIREBASE_ANALYTICS_VERSION` to override dependency versions for Firebase SDKs.
 
 NOTE: on iOS in order to collect demographic, age, gender data etc. you should additionally [include `AdSupport.framework`](https://firebase.google.com/support/guides/analytics-adsupport) into your project.
 
