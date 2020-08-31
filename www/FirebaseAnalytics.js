@@ -39,5 +39,14 @@ module.exports = {
         return new Promise(function(resolve, reject) {
             exec(resolve, reject, PLUGIN_NAME, "setCurrentScreen", [name]);
         });
+    },
+    setDefaultEventParameters: function(defaults) {
+        return new Promise(function(resolve, reject) {
+            if (typeof defaults !== "object") {
+                return reject(new TypeError("Defaults must be an object"));
+            }
+
+            exec(resolve, reject, PLUGIN_NAME, "setDefaultEventParameters", [defaults || {}]);
+        });
     }
 };

@@ -67,4 +67,13 @@
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
+- (void)setDefaultEventParameters:(CDVInvokedUrlCommand *)command {
+    NSDictionary* params = [command.arguments objectAtIndex:0];
+
+    [FIRAnalytics setDefaultEventParameters:params];
+
+    CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
 @end
