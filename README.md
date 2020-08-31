@@ -81,9 +81,15 @@ cordova.plugins.firebase.analytics.setEnabled(false);
 ```
 
 ### resetAnalyticsData()
-Clears all analytics data for this instance from the device and resets the app instance ID
+Clears all analytics data for this instance from the device and resets the app instance ID.
 ```js
 cordova.plugins.firebase.analytics.resetAnalyticsData();
+```
+
+### setDefaultEventParameters()
+Adds parameters that will be set on every event logged from the SDK, including automatic ones.
+```js
+cordova.plugins.firebase.analytics.setDefaultEventParameters({foo: "bar"});
 ```
 
 [npm-url]: https://www.npmjs.com/package/cordova-plugin-firebase-analytics
