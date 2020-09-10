@@ -42,11 +42,14 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 
         <header-file src="src/ios/FirebaseAnalyticsPlugin.h" />
         <source-file src="src/ios/FirebaseAnalyticsPlugin.m" />
-
+ 
         <podspec>
             <config>
                 <source url="https://cdn.cocoapods.org/"/>
             </config>
+            <pods>
+                <pod name="Firebase/Analytics" spec="$IOS_FIREBASE_ANALYTICS_VERSION" />
+            </pods>
         </podspec>
     </platform>
 
