@@ -48,7 +48,7 @@ Starting from version 4.4.3 it's possible to [disable automatic collection of sc
 
 In order to disable automatic screen collection set the value of variable `AUTOMATIC_SCREEN_REPORTING_ENABLED` to `false`:
 
-$ cordova plugin add cordova-plugin-firebase-analytics --variable AUTOMATIC_SCREEN_REPORTING_ENABLED=false
+    $ cordova plugin add cordova-plugin-firebase-analytics --variable AUTOMATIC_SCREEN_REPORTING_ENABLED=false
 
 ## Methods
 Every method returns a promise that fulfills when a call was successful.
@@ -76,7 +76,7 @@ cordova.plugins.firebase.analytics.setUserProperty("name1", "value1");
 
 Be aware of [automatically collected user properties](https://support.google.com/firebase/answer/6317486?hl=en&ref_topic=6317484).
 
-### setCurrentScreen(_name_)
+### ~~setCurrentScreen(_name_)~~
 Sets the current screen name, which specifies the current visual context in your app. This helps identify the areas in your app where users spend their time and how they interact with your app.
 ```js
 cordova.plugins.firebase.analytics.setCurrentScreen("User profile");
@@ -94,7 +94,7 @@ Clears all analytics data for this instance from the device and resets the app i
 cordova.plugins.firebase.analytics.resetAnalyticsData();
 ```
 
-### setDefaultEventParameters()
+### setDefaultEventParameters(_params_)
 Adds parameters that will be set on every event logged from the SDK, including automatic ones.
 ```js
 cordova.plugins.firebase.analytics.setDefaultEventParameters({foo: "bar"});
