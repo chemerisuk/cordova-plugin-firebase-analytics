@@ -12,6 +12,7 @@
 - [Supported platforms](#supported-platforms)
 - [Installation](#installation)
 - [Disable analytics data collection](#disable-analytics-data-collection)
+- [Disable automatic screen collection](#disable-automatic-screen-collection)
 - [Methods](#methods)
 
 <!-- /MarkdownTOC -->
@@ -36,11 +37,18 @@ Use variables `ANDROID_FIREBASE_ANALYTICS_VERSION` or `IOS_FIREBASE_ANALYTICS_VE
 NOTE: on iOS in order to collect demographic, age, gender data etc. you should additionally [include `AdSupport.framework`](https://firebase.google.com/support/guides/analytics-adsupport) into your project.
 
 ## Disable analytics data collection
-In some cases, you may wish to temporarily or permanently disable collection of Analytics data. You can set the value of variable `FIREBASE_ANALYTICS_COLLECTION_ENABLED` to `false` to prevent collecting any user data:
+In some cases, you may wish to temporarily or permanently disable collection of Analytics data. You can set the value of variable `ANALYTICS_COLLECTION_ENABLED` to `false` to prevent collecting any user data:
 
-    $ cordova plugin add cordova-plugin-firebase-analytics --variable FIREBASE_ANALYTICS_COLLECTION_ENABLED=false
+    $ cordova plugin add cordova-plugin-firebase-analytics --variable ANALYTICS_COLLECTION_ENABLED=false
 
 Later you can re-enable analytics data collection (for instance after getting end-user consent) using method [setEnabled](#setenabledenabled).
+
+## Disable automatic screen collection
+Starting from version 4.4.3 it's possible to [disable automatic collection of screen view events](https://firebase.googleblog.com/2020/08/google-analytics-manual-screen-view.html). Also method [setCurrentScreen](#setcurrentscreenname) is deprecated now. Instead you should use [logEvent](#logeventname-params).
+
+In order to disable automatic screen collection set the value of variable `AUTOMATIC_SCREEN_REPORTING_ENABLED` to `false`:
+
+$ cordova plugin add cordova-plugin-firebase-analytics --variable AUTOMATIC_SCREEN_REPORTING_ENABLED=false
 
 ## Methods
 Every method returns a promise that fulfills when a call was successful.

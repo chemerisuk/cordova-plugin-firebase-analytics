@@ -20,7 +20,8 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <engine name="cordova-ios" version=">=6.0.0"/>
     </engines>
 
-    <preference name="FIREBASE_ANALYTICS_COLLECTION_ENABLED" default="true" />
+    <preference name="ANALYTICS_COLLECTION_ENABLED" default="true" />
+    <preference name="AUTOMATIC_SCREEN_REPORTING_ENABLED" default="true" />
 
     <platform name="ios">
         <preference name="IOS_FIREBASE_ANALYTICS_VERSION" default="~> 6.31.0"/>
@@ -28,7 +29,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <config-file target="config.xml" parent="/*">
             <feature name="FirebaseAnalytics">
                 <param name="ios-package" value="FirebaseAnalyticsPlugin" />
-                <param name="onload" value="$FIREBASE_ANALYTICS_COLLECTION_ENABLED" />
+                <param name="onload" value="$ANALYTICS_COLLECTION_ENABLED" />
             </feature>
         </config-file>
 
@@ -37,7 +38,10 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             https://developer.apple.com/documentation/foundation/nsstring/1409420-boolvalue?preferredLanguage=occ
         -->
         <config-file target="*-Info.plist" parent="FIREBASE_ANALYTICS_COLLECTION_ENABLED">
-            <string>$FIREBASE_ANALYTICS_COLLECTION_ENABLED</string>
+            <string>$ANALYTICS_COLLECTION_ENABLED</string>
+        </config-file>
+        <config-file target="*-Info.plist" parent="FirebaseAutomaticScreenReportingEnabled">
+            <string>$AUTOMATIC_SCREEN_REPORTING_ENABLED</string>
         </config-file>
 
         <header-file src="src/ios/FirebaseAnalyticsPlugin.h" />
@@ -59,7 +63,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="FirebaseAnalytics">
                 <param name="android-package" value="by.chemerisuk.cordova.firebase.FirebaseAnalyticsPlugin" />
-                <param name="onload" value="$FIREBASE_ANALYTICS_COLLECTION_ENABLED" />
+                <param name="onload" value="$ANALYTICS_COLLECTION_ENABLED" />
             </feature>
         </config-file>
 
@@ -73,7 +77,8 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         </config-file>
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <meta-data android:name="firebase_analytics_collection_enabled" android:value="$FIREBASE_ANALYTICS_COLLECTION_ENABLED" />
+            <meta-data android:name="firebase_analytics_collection_enabled" android:value="$ANALYTICS_COLLECTION_ENABLED" />
+            <meta-data android:name="google_analytics_automatic_screen_reporting_enabled" android:value="$AUTOMATIC_SCREEN_REPORTING_ENABLED" />
         </config-file>
 
         <dependency id="cordova-support-android-plugin" version="~1.0.0"/>
