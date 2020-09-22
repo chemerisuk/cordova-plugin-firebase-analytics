@@ -24,7 +24,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     <preference name="AUTOMATIC_SCREEN_REPORTING_ENABLED" default="true" />
 
     <platform name="ios">
-        <preference name="IOS_FIREBASE_ANALYTICS_VERSION" default="~> 6.31.0"/>
+        <preference name="IOS_FIREBASE_ANALYTICS_VERSION" default="~> 6.32.2"/>
 
         <config-file target="config.xml" parent="/*">
             <feature name="FirebaseAnalytics">
