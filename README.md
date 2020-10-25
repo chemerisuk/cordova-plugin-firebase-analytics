@@ -50,6 +50,19 @@ In order to disable automatic screen collection set the value of variable `AUTOM
 
     $ cordova plugin add cordova-plugin-firebase-analytics --variable AUTOMATIC_SCREEN_REPORTING_ENABLED=false
 
+## Using capacitor?
+
+For Android you'll have to add in __android/app/src/main/AndroidManfiest.xml__ under `<application>`
+
+```
+<meta-data
+        tools:replace="android:value"
+        android:name="firebase_analytics_collection_enabled"
+        android:value="true"/>
+```
+
+And in the same file, you'll have to add `xmlns:tools="http://schemas.android.com/tools"` to your manifest tag.
+
 ## Methods
 Every method returns a promise that fulfills when a call was successful.
 
