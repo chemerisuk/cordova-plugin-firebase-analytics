@@ -30,8 +30,6 @@ If you get an error about CocoaPods being unable to find compatible versions, ru
     
     $ pod repo update
 
-Plugin depends on [cordova-support-google-services](https://github.com/chemerisuk/cordova-support-google-services) for setting up google services properly. Please read the [README](https://github.com/chemerisuk/cordova-support-google-services/blob/master/README.md) carefully in order to avoid common issues with a project configuration.
-
 Use variables `ANDROID_FIREBASE_ANALYTICS_VERSION` or `IOS_FIREBASE_ANALYTICS_VERSION` to override dependency versions for Firebase SDKs.
 
 NOTE: on iOS in order to collect demographic, age, gender data etc. you should additionally [include `AdSupport.framework`](https://firebase.google.com/support/guides/analytics-adsupport) into your project.
@@ -44,9 +42,7 @@ In some cases, you may wish to temporarily or permanently disable collection of 
 Later you can re-enable analytics data collection (for instance after getting end-user consent) using method [setEnabled](#setenabledenabled).
 
 ## Disable automatic screen collection
-Starting from version 4.4.3 it's possible to [disable automatic collection of screen view events](https://firebase.googleblog.com/2020/08/google-analytics-manual-screen-view.html). Also method [setCurrentScreen](#setcurrentscreenname) is deprecated now. Instead you should use [logEvent](#logeventname-params).
-
-In order to disable automatic screen collection set the value of variable `AUTOMATIC_SCREEN_REPORTING_ENABLED` to `false`:
+In order to [disable automatic collection of screen view events](https://firebase.googleblog.com/2020/08/google-analytics-manual-screen-view.html) set the value of variable `AUTOMATIC_SCREEN_REPORTING_ENABLED` to `false`:
 
     $ cordova plugin add cordova-plugin-firebase-analytics --variable AUTOMATIC_SCREEN_REPORTING_ENABLED=false
 
@@ -76,7 +72,7 @@ cordova.plugins.firebase.analytics.setUserProperty("name1", "value1");
 
 Be aware of [automatically collected user properties](https://support.google.com/firebase/answer/6317486?hl=en&ref_topic=6317484).
 
-### ~~setCurrentScreen(_name_)~~
+### setCurrentScreen(_name_)
 Sets the current screen name, which specifies the current visual context in your app. This helps identify the areas in your app where users spend their time and how they interact with your app.
 ```js
 cordova.plugins.firebase.analytics.setCurrentScreen("User profile");
