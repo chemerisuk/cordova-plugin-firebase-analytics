@@ -11,6 +11,7 @@
 
 - [Supported platforms](#supported-platforms)
 - [Installation](#installation)
+- [Adding required configuration files](#adding-required-configuration-files)
 - [Disable analytics data collection](#disable-analytics-data-collection)
 - [Disable automatic screen collection](#disable-automatic-screen-collection)
 - [Methods](#methods)
@@ -33,6 +34,28 @@ If you get an error about CocoaPods being unable to find compatible versions, ru
 Use variables `ANDROID_FIREBASE_ANALYTICS_VERSION` or `IOS_FIREBASE_ANALYTICS_VERSION` to override dependency versions for Firebase SDKs.
 
 NOTE: on iOS in order to collect demographic, age, gender data etc. you should additionally [include `AdSupport.framework`](https://firebase.google.com/support/guides/analytics-adsupport) into your project.
+
+## Adding required configuration files
+
+Cordova supports `resource-file` tag for easy copying resources files. Firebase SDK requires `google-services.json` on Android and `GoogleService-Info.plist` on iOS platforms.
+
+1. Put `google-services.json` and/or `GoogleService-Info.plist` into the root directory of your Cordova project
+2. Add new tag for Android platform
+
+```xml
+<platform name="android">
+    ...
+    <resource-file src="google-services.json" target="app/google-services.json" />
+</platform>
+...
+
+<platform name="ios">
+    ...
+    <resource-file src="GoogleService-Info.plist" />
+</platform>
+```
+
+This way config files will be copied on `cordova prepare` step.
 
 ## Disable analytics data collection
 In some cases, you may wish to temporarily or permanently disable collection of Analytics data. You can set the value of variable `ANALYTICS_COLLECTION_ENABLED` to `false` to prevent collecting any user data:
