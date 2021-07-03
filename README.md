@@ -11,9 +11,6 @@
 
 - [Supported platforms](#supported-platforms)
 - [Installation](#installation)
-- [Adding required configuration files](#adding-required-configuration-files)
-- [Disable analytics data collection](#disable-analytics-data-collection)
-- [Disable automatic screen collection](#disable-automatic-screen-collection)
 - [Methods](#methods)
 
 <!-- /MarkdownTOC -->
@@ -35,7 +32,19 @@ Use variables `ANDROID_FIREBASE_ANALYTICS_VERSION` or `IOS_FIREBASE_ANALYTICS_VE
 
 NOTE: on iOS in order to collect demographic, age, gender data etc. you should additionally [include `AdSupport.framework`](https://firebase.google.com/support/guides/analytics-adsupport) into your project.
 
-## Adding required configuration files
+### Disabling analytics data collection
+In some cases, you may wish to temporarily or permanently disable collection of Analytics data. You can set the value of variable `ANALYTICS_COLLECTION_ENABLED` to `false` to prevent collecting any user data:
+
+    $ cordova plugin add cordova-plugin-firebase-analytics --variable ANALYTICS_COLLECTION_ENABLED=false
+
+Later you can re-enable analytics data collection (for instance after getting end-user consent) using method [setEnabled](#setenabledenabled).
+
+### Disabling automatic screen collection
+In order to [disable automatic collection of screen view events](https://firebase.googleblog.com/2020/08/google-analytics-manual-screen-view.html) set the value of variable `AUTOMATIC_SCREEN_REPORTING_ENABLED` to `false`:
+
+    $ cordova plugin add cordova-plugin-firebase-analytics --variable AUTOMATIC_SCREEN_REPORTING_ENABLED=false
+
+### Adding required configuration files
 
 Cordova supports `resource-file` tag for easy copying resources files. Firebase SDK requires `google-services.json` on Android and `GoogleService-Info.plist` on iOS platforms.
 
@@ -48,7 +57,6 @@ Cordova supports `resource-file` tag for easy copying resources files. Firebase 
     <resource-file src="google-services.json" target="app/google-services.json" />
 </platform>
 ...
-
 <platform name="ios">
     ...
     <resource-file src="GoogleService-Info.plist" />
@@ -56,18 +64,6 @@ Cordova supports `resource-file` tag for easy copying resources files. Firebase 
 ```
 
 This way config files will be copied on `cordova prepare` step.
-
-## Disable analytics data collection
-In some cases, you may wish to temporarily or permanently disable collection of Analytics data. You can set the value of variable `ANALYTICS_COLLECTION_ENABLED` to `false` to prevent collecting any user data:
-
-    $ cordova plugin add cordova-plugin-firebase-analytics --variable ANALYTICS_COLLECTION_ENABLED=false
-
-Later you can re-enable analytics data collection (for instance after getting end-user consent) using method [setEnabled](#setenabledenabled).
-
-## Disable automatic screen collection
-In order to [disable automatic collection of screen view events](https://firebase.googleblog.com/2020/08/google-analytics-manual-screen-view.html) set the value of variable `AUTOMATIC_SCREEN_REPORTING_ENABLED` to `false`:
-
-    $ cordova plugin add cordova-plugin-firebase-analytics --variable AUTOMATIC_SCREEN_REPORTING_ENABLED=false
 
 ## Methods
 Every method returns a promise that fulfills when a call was successful.
