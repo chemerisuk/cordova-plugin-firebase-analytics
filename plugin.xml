@@ -24,7 +24,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     <preference name="AUTOMATIC_SCREEN_REPORTING_ENABLED" default="true" />
 
     <platform name="ios">
-        <preference name="IOS_FIREBASE_ANALYTICS_VERSION" default="~> 8.2.0" />
+        <preference name="IOS_FIREBASE_POD_VERSION" default="~> 8.8.0" />
 
         <config-file target="config.xml" parent="/*">
             <feature name="FirebaseAnalytics">
@@ -52,7 +52,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                 <source url="https://cdn.cocoapods.org/"/>
             </config>
             <pods>
-                <pod name="Firebase/Analytics" spec="$IOS_FIREBASE_ANALYTICS_VERSION" />
+                <pod name="Firebase/Analytics" spec="$IOS_FIREBASE_POD_VERSION" />
             </pods>
         </podspec>
     </platform>
