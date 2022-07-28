@@ -3,13 +3,13 @@
  * Logs an app event.
  *
  * @param {string} name Enent name
- * @param {object} params Event parameters
+ * @param {Record<string, object>} params Event parameters
  * @returns {Promise<void>} Callback when operation is completed
  *
  * @example
  * cordova.plugins.firebase.analytics.logEvent("my_event", {param1: "value1"});
  */
-export function logEvent(name: string, params: any): Promise<void>;
+export function logEvent(name: string, params: Record<string, any>): Promise<void>;
 /**
  *
  * Sets the user ID property. This feature must be used in accordance with Google's Privacy Policy.
@@ -72,10 +72,10 @@ export function setCurrentScreen(screenName: string): Promise<void>;
 /**
  *
  * Adds parameters that will be set on every event logged from the SDK, including automatic ones.
- * @param {object} defaults Key-value default parameters map
+ * @param {Record<string, object>} defaults Key-value default parameters map
  * @returns {Promise<void>} Callback when operation is completed
  *
  * @example
  * cordova.plugins.firebase.analytics.setDefaultEventParameters({foo: "bar"});
  */
-export function setDefaultEventParameters(defaults: any): Promise<void>;
+export function setDefaultEventParameters(defaults: Record<string, any>): Promise<void>;

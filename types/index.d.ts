@@ -1,10 +1,4 @@
-/**
- * test comment
- */
 interface CordovaPlugins {
-    /**
-     * test firebase
-     */
     firebase: FirebasePlugins;
 }
 

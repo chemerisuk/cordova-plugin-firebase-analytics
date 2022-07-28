@@ -8,7 +8,7 @@ module.exports = {
      * Logs an app event.
      *
      * @param {string} name Enent name
-     * @param {object} params Event parameters
+     * @param {Record<string, object>} params Event parameters
      * @returns {Promise<void>} Callback when operation is completed
      *
      * @example
@@ -115,7 +115,7 @@ module.exports = {
     /**
      *
      * Adds parameters that will be set on every event logged from the SDK, including automatic ones.
-     * @param {object} defaults Key-value default parameters map
+     * @param {Record<string, object>} defaults Key-value default parameters map
      * @returns {Promise<void>} Callback when operation is completed
      *
      * @example

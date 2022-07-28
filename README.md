@@ -92,7 +92,7 @@ cordova.plugins.firebase.analytics.logEvent("my_event", {param1: "value1"});
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `name` | `string` | Enent name |
-| `params` | `any` | Event parameters |
+| `params` | `Record`<`string`, `any`\> | Event parameters |
 
 #### Returns
 
@@ -152,7 +152,7 @@ cordova.plugins.firebase.analytics.setDefaultEventParameters({foo: "bar"});
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `defaults` | `any` | Key-value default parameters map |
+| `defaults` | `Record`<`string`, `any`\> | Key-value default parameters map |
 
 #### Returns
 
