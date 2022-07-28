@@ -36,23 +36,27 @@ If you get an error about CocoaPods being unable to find compatible versions, ru
     
     $ pod repo update
 
-Use variables `ANDROID_FIREBASE_BOM_VERSION` or `IOS_FIREBASE_ANALYTICS_VERSION` to override dependency versions for Firebase SDKs:
+Use variables `ANDROID_FIREBASE_BOM_VERSION` or `IOS_FIREBASE_POD_VERSION` to override dependency versions for Firebase SDKs:
     
-    $ cordova plugin add cordova-plugin-firebase-analytics --variable IOS_FIREBASE_POD_VERSION="9.3.0" --variable ANDROID_FIREBASE_BOM_VERSION="30.3.1"
+    $ cordova plugin add cordova-plugin-firebase-analytics \
+        --variable IOS_FIREBASE_POD_VERSION="9.3.0" \
+        --variable ANDROID_FIREBASE_BOM_VERSION="30.3.1"
 
 NOTE: on iOS in order to collect demographic, age, gender data etc. you should additionally [include `AdSupport.framework`](https://firebase.google.com/support/guides/analytics-adsupport) into your project.
 
 ### Disabling analytics data collection
 In some cases, you may wish to temporarily or permanently disable collection of Analytics data. You can set the value of variable `ANALYTICS_COLLECTION_ENABLED` to `false` to prevent collecting any user data:
 
-    $ cordova plugin add cordova-plugin-firebase-analytics --variable ANALYTICS_COLLECTION_ENABLED=false
+    $ cordova plugin add cordova-plugin-firebase-analytics \
+        --variable ANALYTICS_COLLECTION_ENABLED=false
 
 Later you can re-enable analytics data collection (for instance after getting end-user consent) using method [setEnabled](#setenabledenabled).
 
 ### Disabling automatic screen collection
 In order to [disable automatic collection of screen view events](https://firebase.googleblog.com/2020/08/google-analytics-manual-screen-view.html) set the value of variable `AUTOMATIC_SCREEN_REPORTING_ENABLED` to `false`:
 
-    $ cordova plugin add cordova-plugin-firebase-analytics --variable AUTOMATIC_SCREEN_REPORTING_ENABLED=false
+    $ cordova plugin add cordova-plugin-firebase-analytics \
+        --variable AUTOMATIC_SCREEN_REPORTING_ENABLED=false
 
 ### Adding required configuration files
 
