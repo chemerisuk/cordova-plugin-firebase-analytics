@@ -2,6 +2,7 @@
   "name": "cordova-plugin-firebase-analytics",
   "version": "6.1.0",
   "description": "Cordova plugin for Firebase Analytics",
+  "types": "./types/index.d.ts",
   "cordova": {
     "id": "cordova-plugin-firebase-analytics",
     "platforms": [
@@ -29,7 +30,15 @@
     "cordova-ios"
   ],
   "scripts": {
-    "version": "perl -p -i -e 's/(version=)\"\\d+\\.\\d+\\.\\d+\"/$1\"'$npm_package_version'\"$2/' plugin.xml && git add plugin.xml",
-    "postversion": "git push && git push --tags"
+    "preversion": "npm run docs && rm -rf ./docs",
+    "version": "perl -i -pe 's/(version=)\"\\d+\\.\\d+\\.\\d+\"/$1\"'$npm_package_version'\"$2/' plugin.xml && git add plugin.xml README.md",
+    "postversion": "git push && git push --tags",
+    "predocs": "tsc www/* --declaration --allowJs --emitDeclarationOnly --outDir types",
+    "docs": "typedoc ./types",
+    "postdocs": "cat ./docs/modules/FirebaseAnalytics.md >> README.md && perl -i -0pe 's/(## Methods).*(## Functions)/$1/gms' README.md"
+  },
+  "devDependencies": {
+    "@colony/typedoc-plugin-markdown": "3.16.0",
+    "typedoc": "^0.23.9"
   }
 }
