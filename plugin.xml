@@ -82,7 +82,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             <meta-data android:name="google_analytics_automatic_screen_reporting_enabled" android:value="$AUTOMATIC_SCREEN_REPORTING_ENABLED" />
         </config-file>
 
-        <dependency id="cordova-support-android-plugin" version="~1.0.0" />
+        <dependency id="cordova-support-android-plugin" version="~2.0.0" />
 
         <framework src="com.google.firebase:firebase-analytics:$ANDROID_FIREBASE_ANALYTICS_VERSION" />
 
