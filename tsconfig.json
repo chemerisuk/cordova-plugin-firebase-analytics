@@ -4,6 +4,7 @@
     "entryPointStrategy": "expand",
     "hideBreadcrumbs": true,
     "hideInPageTOC": true,
-    "hidePageTitle": true
+    "hidePageTitle": true,
+    "hideMembersSymbol": true
   }
 }
