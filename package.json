@@ -30,15 +30,22 @@
     "cordova-ios"
   ],
   "scripts": {
-    "preversion": "npm run docs && rm -rf ./docs",
+    "prepare": "husky install",
     "version": "perl -i -pe 's/(version=)\"\\d+\\.\\d+\\.\\d+\"/$1\"'$npm_package_version'\"$2/' plugin.xml && git add plugin.xml README.md",
     "postversion": "git push && git push --tags",
-    "predocs": "tsc www/* --declaration --allowJs --emitDeclarationOnly --outDir types",
+    "predocs": "tsc www/* --declaration --allowJs --checkJs --lib es2015,dom --emitDeclarationOnly --outDir types",
     "docs": "typedoc ./types",
     "postdocs": "cat ./docs/modules/FirebaseAnalytics.md >> README.md && perl -i -0pe 's/(## Methods).*(## Functions)/$1/gms' README.md"
   },
+  "lint-staged": {
+    "www/**/*.js": [
+      "npm run docs"
+    ]
+  },
   "devDependencies": {
     "@colony/typedoc-plugin-markdown": "3.16.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "typedoc": "^0.23.9"
   }
 }
