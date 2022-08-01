@@ -15,11 +15,21 @@
 
 ## Index
 
-<!-- MarkdownTOC levels="2" autolink="true" -->
+<!-- MarkdownTOC levels="2,3" autolink="true" -->
 
 - [Supported platforms](#supported-platforms)
 - [Installation](#installation)
-- [Methods](#methods)
+    - [Disabling analytics data collection](#disabling-analytics-data-collection)
+    - [Disabling automatic screen collection](#disabling-automatic-screen-collection)
+    - [Adding required configuration files](#adding-required-configuration-files)
+- [Functions](#functions)
+    - [logEvent](#logevent)
+    - [resetAnalyticsData](#resetanalyticsdata)
+    - [setCurrentScreen](#setcurrentscreen)
+    - [setDefaultEventParameters](#setdefaulteventparameters)
+    - [setEnabled](#setenabled)
+    - [setUserId](#setuserid)
+    - [setUserProperty](#setuserproperty)
 
 <!-- /MarkdownTOC -->
 
@@ -79,9 +89,13 @@ Cordova supports `resource-file` tag for easy copying resources files. Firebase 
 
 This way config files will be copied on `cordova prepare` step.
 
-## Methods
+<!-- TypedocGenerated -->
 
-### ▸ **logEvent**(`name`, `params`): `Promise`<`void`\>
+## Functions
+
+### logEvent
+
+**logEvent**(`name`, `params`): `Promise`<`void`\>
 
 Logs an app event.
 
@@ -104,7 +118,11 @@ cordova.plugins.firebase.analytics.logEvent("my_event", {param1: "value1"});
 
 Callback when operation is completed
 
-### ▸ **resetAnalyticsData**(): `Promise`<`void`\>
+___
+
+### resetAnalyticsData
+
+**resetAnalyticsData**(): `Promise`<`void`\>
 
 Clears all analytics data for this instance from the device and resets the app instance ID.
 
@@ -120,7 +138,11 @@ cordova.plugins.firebase.analytics.resetAnalyticsData();
 
 Callback when operation is completed
 
-### ▸ **setCurrentScreen**(`screenName`): `Promise`<`void`\>
+___
+
+### setCurrentScreen
+
+**setCurrentScreen**(`screenName`): `Promise`<`void`\>
 
 Sets the current screen name, which specifies the current visual context in your app. This helps identify the areas in your app where users spend their time and how they interact with your app.
 
@@ -142,7 +164,11 @@ cordova.plugins.firebase.analytics.setCurrentScreen("User dashboard");
 
 Callback when operation is completed
 
-### ▸ **setDefaultEventParameters**(`defaults`): `Promise`<`void`\>
+___
+
+### setDefaultEventParameters
+
+**setDefaultEventParameters**(`defaults`): `Promise`<`void`\>
 
 Adds parameters that will be set on every event logged from the SDK, including automatic ones.
 
@@ -164,7 +190,11 @@ cordova.plugins.firebase.analytics.setDefaultEventParameters({foo: "bar"});
 
 Callback when operation is completed
 
-### ▸ **setEnabled**(`enabled`): `Promise`<`void`\>
+___
+
+### setEnabled
+
+**setEnabled**(`enabled`): `Promise`<`void`\>
 
 Sets whether analytics collection is enabled for this app on this device.
 
@@ -186,7 +216,11 @@ cordova.plugins.firebase.analytics.setEnabled(false);
 
 Callback when operation is completed
 
-### ▸ **setUserId**(`userId`): `Promise`<`void`\>
+___
+
+### setUserId
+
+**setUserId**(`userId`): `Promise`<`void`\>
 
 Sets the user ID property. This feature must be used in accordance with Google's Privacy Policy.
 
@@ -212,7 +246,11 @@ cordova.plugins.firebase.analytics.setUserId("12345");
 
 Callback when operation is completed
 
-### ▸ **setUserProperty**(`name`, `value`): `Promise`<`void`\>
+___
+
+### setUserProperty
+
+**setUserProperty**(`name`, `value`): `Promise`<`void`\>
 
 Sets a user property to a given value. Be aware of automatically collected user properties.
 
