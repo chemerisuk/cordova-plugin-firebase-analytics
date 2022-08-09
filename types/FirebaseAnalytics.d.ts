@@ -1,17 +1,15 @@
 /**
- *
  * Logs an app event.
  *
  * @param {string} name Enent name
- * @param {Record<string, object>} params Event parameters
+ * @param {Record<string, number | string | Array<object>>} params Event parameters
  * @returns {Promise<void>} Callback when operation is completed
  *
  * @example
  * cordova.plugins.firebase.analytics.logEvent("my_event", {param1: "value1"});
  */
-export function logEvent(name: string, params: Record<string, any>): Promise<void>;
+export function logEvent(name: string, params: Record<string, number | string | Array<object>>): Promise<void>;
 /**
- *
  * Sets the user ID property. This feature must be used in accordance with Google's Privacy Policy.
  *
  * @param {string} userId User's indentifier string
@@ -24,7 +22,6 @@ export function logEvent(name: string, params: Record<string, any>): Promise<voi
  */
 export function setUserId(userId: string): Promise<void>;
 /**
- *
  * Sets a user property to a given value. Be aware of automatically collected user properties.
  *
  * @param {string} name Property name
@@ -38,7 +35,6 @@ export function setUserId(userId: string): Promise<void>;
  */
 export function setUserProperty(name: string, value: string): Promise<void>;
 /**
- *
  * Clears all analytics data for this instance from the device and resets the app instance ID.
  *
  * @returns {Promise<void>} Callback when operation is completed
@@ -48,7 +44,6 @@ export function setUserProperty(name: string, value: string): Promise<void>;
  */
 export function resetAnalyticsData(): Promise<void>;
 /**
- *
  * Sets whether analytics collection is enabled for this app on this device.
  *
  * @param {boolean} enabled Flag that specifies new state
@@ -59,7 +54,6 @@ export function resetAnalyticsData(): Promise<void>;
  */
 export function setEnabled(enabled: boolean): Promise<void>;
 /**
- *
  * Sets the current screen name, which specifies the current visual context in your app. This helps identify the areas in your app where users spend their time and how they interact with your app.
  *
  * @param {string} screenName Current screen name
@@ -70,12 +64,11 @@ export function setEnabled(enabled: boolean): Promise<void>;
  */
 export function setCurrentScreen(screenName: string): Promise<void>;
 /**
- *
  * Adds parameters that will be set on every event logged from the SDK, including automatic ones.
- * @param {Record<string, object>} defaults Key-value default parameters map
+ * @param {Record<string, number | string | Array<object>>} defaults Key-value default parameters map
  * @returns {Promise<void>} Callback when operation is completed
  *
  * @example
  * cordova.plugins.firebase.analytics.setDefaultEventParameters({foo: "bar"});
  */
-export function setDefaultEventParameters(defaults: Record<string, any>): Promise<void>;
+export function setDefaultEventParameters(defaults: Record<string, number | string | Array<object>>): Promise<void>;
