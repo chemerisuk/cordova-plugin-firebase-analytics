@@ -37,11 +37,6 @@
     "docs": "typedoc && perl -i -pe 's/README.md#/#/g' ./docs/README.md",
     "postdocs": "perl -i -0pe 's/(<!-- TypedocGenerated -->).*/$1\n\n/gms' README.md && cat ./docs/README.md >> README.md"
   },
-  "lint-staged": {
-    "www/**/*.js": [
-      "npm run docs"
-    ]
-  },
   "devDependencies": {
     "typedoc": "^0.23.9",
     "typedoc-plugin-markdown": "^3.13.4"

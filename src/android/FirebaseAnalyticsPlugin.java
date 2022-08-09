@@ -18,7 +18,6 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-
 public class FirebaseAnalyticsPlugin extends ReflectiveCordovaPlugin {
     private static final String TAG = "FirebaseAnalyticsPlugin";
 
@@ -101,13 +100,13 @@ public class FirebaseAnalyticsPlugin extends ReflectiveCordovaPlugin {
                 bundle.putLong(key, (Long)value);
             } else if (value instanceof JSONArray) {
                 JSONArray jsonArray = (JSONArray)value;
-                ArrayList<Bundle> items = new ArrayList<Bundle>();
-                for (int i = 0; i < jsonArray.length(); i++) {
-                    items.add(parse((JSONObject)jsonArray.get(i)));
+                ArrayList<Bundle> items = new ArrayList<>();
+                for (int i = 0, n = jsonArray.length(); i < n; i++) {
+                    items.add(parse(jsonArray.getJSONObject(i)));
                 }
                 bundle.putParcelableArrayList(key, items);
             } else {
-                Log.w(TAG, "Value for key " + key + " not one of (String, Integer, Double, Long, JSONArray)");
+                Log.w(TAG, "Value for key " + key + " is not supported");
             }
         }
 
