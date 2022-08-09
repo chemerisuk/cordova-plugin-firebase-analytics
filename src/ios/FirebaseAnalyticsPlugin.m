@@ -1,7 +1,7 @@
 #import "FirebaseAnalyticsPlugin.h"
 
-@import Firebase;
-
+@import FirebaseCore;
+@import FirebaseAnalytics;
 
 @implementation FirebaseAnalyticsPlugin
 
