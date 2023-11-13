@@ -31,7 +31,7 @@ public class FirebaseAnalyticsPlugin extends ReflectiveCordovaPlugin {
     }
 
     @CordovaMethod
-    private void logEvent(CordovaArgs args, CallbackContext callbackContext) throws JSONException {
+    protected void logEvent(CordovaArgs args, CallbackContext callbackContext) throws JSONException {
         String name = args.getString(0);
         JSONObject params = args.getJSONObject(1);
         firebaseAnalytics.logEvent(name, parse(params));
@@ -39,14 +39,14 @@ public class FirebaseAnalyticsPlugin extends ReflectiveCordovaPlugin {
     }
 
     @CordovaMethod
-    private void setUserId(CordovaArgs args, CallbackContext callbackContext) throws JSONException {
+    protected void setUserId(CordovaArgs args, CallbackContext callbackContext) throws JSONException {
         String userId = args.getString(0);
         firebaseAnalytics.setUserId(userId);
         callbackContext.success();
     }
 
     @CordovaMethod
-    private void setUserProperty(CordovaArgs args, CallbackContext callbackContext) throws JSONException {
+    protected void setUserProperty(CordovaArgs args, CallbackContext callbackContext) throws JSONException {
         String name = args.getString(0);
         String value = args.getString(1);
         firebaseAnalytics.setUserProperty(name, value);
@@ -54,20 +54,20 @@ public class FirebaseAnalyticsPlugin extends ReflectiveCordovaPlugin {
     }
 
     @CordovaMethod
-    private void resetAnalyticsData(CordovaArgs args, CallbackContext callbackContext) {
+    protected void resetAnalyticsData(CordovaArgs args, CallbackContext callbackContext) {
         firebaseAnalytics.resetAnalyticsData();
         callbackContext.success();
     }
 
     @CordovaMethod
-    private void setEnabled(CordovaArgs args, CallbackContext callbackContext) throws JSONException {
+    protected void setEnabled(CordovaArgs args, CallbackContext callbackContext) throws JSONException {
         boolean enabled = args.getBoolean(0);
         firebaseAnalytics.setAnalyticsCollectionEnabled(enabled);
         callbackContext.success();
     }
 
     @CordovaMethod
-    private void setCurrentScreen(CordovaArgs args, CallbackContext callbackContext) throws JSONException {
+    protected void setCurrentScreen(CordovaArgs args, CallbackContext callbackContext) throws JSONException {
         String screenName = args.getString(0);
         Bundle bundle = new Bundle();
         bundle.putString(FirebaseAnalytics.Param.SCREEN_NAME, screenName);
@@ -76,7 +76,7 @@ public class FirebaseAnalyticsPlugin extends ReflectiveCordovaPlugin {
     }
 
     @CordovaMethod
-    private void setDefaultEventParameters(CordovaArgs args, CallbackContext callbackContext) throws JSONException {
+    protected void setDefaultEventParameters(CordovaArgs args, CallbackContext callbackContext) throws JSONException {
         JSONObject params = args.getJSONObject(0);
         firebaseAnalytics.setDefaultEventParameters(parse(params));
         callbackContext.success();
