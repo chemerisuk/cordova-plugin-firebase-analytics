@@ -142,14 +142,14 @@ ___
 
 ### setCurrentScreen
 
-**setCurrentScreen**(`screenName`): `Promise`<`void`\>
+**setCurrentScreen**(`screenName`,`screenClass`): `Promise`<`void`\>
 
-Sets the current screen name, which specifies the current visual context in your app. This helps identify the areas in your app where users spend their time and how they interact with your app.
+Sets the current screen name and screen class, which specifies the current visual context in your app. This helps identify the areas in your app where users spend their time and how they interact with your app. Screen class is optional. If you don't provide a value for second parameter, screen class is automatically set as screen name.
 
 **`Example`**
 
 ```ts
-cordova.plugins.firebase.analytics.setCurrentScreen("User dashboard");
+cordova.plugins.firebase.analytics.setCurrentScreen("User dashboard", "User dashboard");
 ```
 
 #### Parameters
@@ -157,6 +157,7 @@ cordova.plugins.firebase.analytics.setCurrentScreen("User dashboard");
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `screenName` | `string` | Current screen name |
+| `screenClass` | `string` | Current screen class (optional) |
 
 #### Returns
 
