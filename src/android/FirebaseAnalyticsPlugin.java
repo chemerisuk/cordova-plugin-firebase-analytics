@@ -82,6 +82,26 @@ public class FirebaseAnalyticsPlugin extends ReflectiveCordovaPlugin {
         callbackContext.success();
     }
 
+    @CordovaMethod
+    protected void initiateOnDeviceConversionMeasurementWithEmail(CordovaArgs args, CallbackContext callbackContext) throws JSONException {
+        callbackContext.error("This feature is only available on iOS");
+    }
+
+    @CordovaMethod
+    protected void initiateOnDeviceConversionMeasurementWithPhoneNumber(CordovaArgs args, CallbackContext callbackContext) throws JSONException {
+        callbackContext.error("This feature is only available on iOS");
+    }
+
+    @CordovaMethod
+    protected void initiateOnDeviceConversionMeasurementWithHashedEmail(CordovaArgs args, CallbackContext callbackContext) throws JSONException {
+        callbackContext.error("This feature is only available on iOS");
+    }
+
+    @CordovaMethod
+    protected void initiateOnDeviceConversionMeasurementWithHashedPhoneNumber(CordovaArgs args, CallbackContext callbackContext) throws JSONException {
+        callbackContext.error("This feature is only available on iOS");
+    }
+
     private static Bundle parse(JSONObject params) throws JSONException {
         Bundle bundle = new Bundle();
         Iterator<String> it = params.keys();

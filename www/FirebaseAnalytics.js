@@ -117,3 +117,67 @@ function(defaults) {
         exec(resolve, reject, PLUGIN_NAME, "setDefaultEventParameters", [defaults || {}]);
     });
 };
+
+exports.initiateOnDeviceConversionMeasurementWithEmail =
+/**
+ * Initiates on-device conversion measurement with the given email address.
+ * @param {string} emailAddress Email address to use for conversion measurement
+ * @returns {Promise<void>} Callback when operation is completed
+ * @throws {Error} This feature is only available on iOS
+ *
+ * @example
+ * cordova.plugins.firebase.analytics.initiateOnDeviceConversionMeasurementWithEmail("user@example.com");
+ */
+function(emailAddress) {
+    return new Promise(function(resolve, reject) {
+        exec(resolve, reject, PLUGIN_NAME, "initiateOnDeviceConversionMeasurementWithEmail", [emailAddress]);
+    });
+};
+
+exports.initiateOnDeviceConversionMeasurementWithPhoneNumber =
+/**
+ * Initiates on-device conversion measurement with the given phone number.
+ * @param {string} phoneNumber Phone number to use for conversion measurement (must be in E.164 format)
+ * @returns {Promise<void>} Callback when operation is completed
+ * @throws {Error} This feature is only available on iOS
+ *
+ * @example
+ * cordova.plugins.firebase.analytics.initiateOnDeviceConversionMeasurementWithPhoneNumber("+15555555555");
+ */
+function(phoneNumber) {
+    return new Promise(function(resolve, reject) {
+        exec(resolve, reject, PLUGIN_NAME, "initiateOnDeviceConversionMeasurementWithPhoneNumber", [phoneNumber]);
+    });
+};
+
+exports.initiateOnDeviceConversionMeasurementWithHashedEmail =
+/**
+ * Initiates on-device conversion measurement with the given hashed email address.
+ * @param {string} emailToHash SHA256 hashed email address to use for conversion measurement
+ * @returns {Promise<void>} Callback when operation is completed
+ * @throws {Error} This feature is only available on iOS
+ *
+ * @example
+ * cordova.plugins.firebase.analytics.initiateOnDeviceConversionMeasurementWithHashedEmail("hashedEmail");
+ */
+function(emailToHash) {
+    return new Promise(function(resolve, reject) {
+        exec(resolve, reject, PLUGIN_NAME, "initiateOnDeviceConversionMeasurementWithHashedEmail", [emailToHash]);
+    });
+};
+
+exports.initiateOnDeviceConversionMeasurementWithHashedPhoneNumber =
+/**
+ * Initiates on-device conversion measurement with the given hashed phone number.
+ * @param {string} phoneToHash SHA256 hashed phone number to use for conversion measurement
+ * @returns {Promise<void>} Callback when operation is completed
+ * @throws {Error} This feature is only available on iOS
+ *
+ * @example
+ * cordova.plugins.firebase.analytics.initiateOnDeviceConversionMeasurementWithHashedPhoneNumber("hashedPhoneNumber");
+ */
+function(phoneToHash) {
+    return new Promise(function(resolve, reject) {
+        exec(resolve, reject, PLUGIN_NAME, "initiateOnDeviceConversionMeasurementWithHashedPhoneNumber", [phoneToHash]);
+    });
+};

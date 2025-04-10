@@ -72,3 +72,43 @@ export function setCurrentScreen(screenName: string): Promise<void>;
  * cordova.plugins.firebase.analytics.setDefaultEventParameters({foo: "bar"});
  */
 export function setDefaultEventParameters(defaults: Record<string, number | string | Array<object>>): Promise<void>;
+/**
+ * Initiates on-device conversion measurement with the given email address.
+ * @param {string} emailAddress Email address to use for conversion measurement
+ * @returns {Promise<void>} Callback when operation is completed
+ * @throws {Error} This feature is only available on iOS
+ *
+ * @example
+ * cordova.plugins.firebase.analytics.initiateOnDeviceConversionMeasurementWithEmail("user@example.com");
+ */
+export function initiateOnDeviceConversionMeasurementWithEmail(emailAddress: string): Promise<void>;
+/**
+ * Initiates on-device conversion measurement with the given phone number.
+ * @param {string} phoneNumber Phone number to use for conversion measurement (must be in E.164 format)
+ * @returns {Promise<void>} Callback when operation is completed
+ * @throws {Error} This feature is only available on iOS
+ *
+ * @example
+ * cordova.plugins.firebase.analytics.initiateOnDeviceConversionMeasurementWithPhoneNumber("+15555555555");
+ */
+export function initiateOnDeviceConversionMeasurementWithPhoneNumber(phoneNumber: string): Promise<void>;
+/**
+ * Initiates on-device conversion measurement with the given hashed email address.
+ * @param {string} emailToHash SHA256 hashed email address to use for conversion measurement
+ * @returns {Promise<void>} Callback when operation is completed
+ * @throws {Error} This feature is only available on iOS
+ *
+ * @example
+ * cordova.plugins.firebase.analytics.initiateOnDeviceConversionMeasurementWithHashedEmail("hashedEmail");
+ */
+export function initiateOnDeviceConversionMeasurementWithHashedEmail(emailToHash: string): Promise<void>;
+/**
+ * Initiates on-device conversion measurement with the given hashed phone number.
+ * @param {string} phoneToHash SHA256 hashed phone number to use for conversion measurement
+ * @returns {Promise<void>} Callback when operation is completed
+ * @throws {Error} This feature is only available on iOS
+ *
+ * @example
+ * cordova.plugins.firebase.analytics.initiateOnDeviceConversionMeasurementWithHashedPhoneNumber("hashedPhoneNumber");
+ */
+export function initiateOnDeviceConversionMeasurementWithHashedPhoneNumber(phoneToHash: string): Promise<void>;
