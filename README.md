@@ -93,6 +93,126 @@ This way config files will be copied on `cordova prepare` step.
 
 ## Functions
 
+### initiateOnDeviceConversionMeasurementWithEmail
+
+**initiateOnDeviceConversionMeasurementWithEmail**(`emailAddress`): `Promise`<`void`\>
+
+Initiates on-device conversion measurement with the given email address.
+
+**`Throws`**
+
+This feature is only available on iOS
+
+**`Example`**
+
+```ts
+cordova.plugins.firebase.analytics.initiateOnDeviceConversionMeasurementWithEmail("user@example.com");
+```
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `emailAddress` | `string` | Email address to use for conversion measurement |
+
+#### Returns
+
+`Promise`<`void`\>
+
+Callback when operation is completed
+
+___
+
+### initiateOnDeviceConversionMeasurementWithHashedEmail
+
+**initiateOnDeviceConversionMeasurementWithHashedEmail**(`emailToHash`): `Promise`<`void`\>
+
+Initiates on-device conversion measurement with the given hashed email address.
+
+**`Throws`**
+
+This feature is only available on iOS
+
+**`Example`**
+
+```ts
+cordova.plugins.firebase.analytics.initiateOnDeviceConversionMeasurementWithHashedEmail("hashedEmail");
+```
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `emailToHash` | `string` | SHA256 hashed email address to use for conversion measurement |
+
+#### Returns
+
+`Promise`<`void`\>
+
+Callback when operation is completed
+
+___
+
+### initiateOnDeviceConversionMeasurementWithHashedPhoneNumber
+
+**initiateOnDeviceConversionMeasurementWithHashedPhoneNumber**(`phoneToHash`): `Promise`<`void`\>
+
+Initiates on-device conversion measurement with the given hashed phone number.
+
+**`Throws`**
+
+This feature is only available on iOS
+
+**`Example`**
+
+```ts
+cordova.plugins.firebase.analytics.initiateOnDeviceConversionMeasurementWithHashedPhoneNumber("hashedPhoneNumber");
+```
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `phoneToHash` | `string` | SHA256 hashed phone number to use for conversion measurement |
+
+#### Returns
+
+`Promise`<`void`\>
+
+Callback when operation is completed
+
+___
+
+### initiateOnDeviceConversionMeasurementWithPhoneNumber
+
+**initiateOnDeviceConversionMeasurementWithPhoneNumber**(`phoneNumber`): `Promise`<`void`\>
+
+Initiates on-device conversion measurement with the given phone number.
+
+**`Throws`**
+
+This feature is only available on iOS
+
+**`Example`**
+
+```ts
+cordova.plugins.firebase.analytics.initiateOnDeviceConversionMeasurementWithPhoneNumber("+15555555555");
+```
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `phoneNumber` | `string` | Phone number to use for conversion measurement (must be in E.164 format) |
+
+#### Returns
+
+`Promise`<`void`\>
+
+Callback when operation is completed
+
+___
+
 ### logEvent
 
 **logEvent**(`name`, `params`): `Promise`<`void`\>
