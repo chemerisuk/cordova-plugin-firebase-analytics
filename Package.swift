@@ -2,10 +2,10 @@
 import PackageDescription
 
 let package = Package(
-    name: "cordova-plugin-firebase-messaging",
+    name: "cordova-plugin-firebase-analytics",
     platforms: [.iOS(.v15)],
     products: [
-        .library(name: "cordova-plugin-firebase-messaging", targets: ["cordova-plugin-firebase-messaging"])
+        .library(name: "cordova-plugin-firebase-analytics", targets: ["cordova-plugin-firebase-analytics"])
     ],
     dependencies: [
         .package(url: "https://github.com/apache/cordova-ios.git", branch: "master"),
@@ -13,7 +13,7 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "cordova-plugin-firebase-messaging",
+            name: "cordova-plugin-firebase-analytics",
             dependencies: [
                 .product(name: "Cordova", package: "cordova-ios"),
                 .product(name: "FirebaseAnalytics", package: "firebase-ios-sdk")
