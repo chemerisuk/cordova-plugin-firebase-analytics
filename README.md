@@ -46,13 +46,17 @@ If you get an error about CocoaPods being unable to find compatible versions, ru
     
     $ pod repo update
 
-Use variables `ANDROID_FIREBASE_BOM_VERSION` or `IOS_FIREBASE_POD_VERSION` to override dependency versions for Firebase SDKs:
+Use variables `IOS_FIREBASE_SDK_VERSION` and `ANDROID_FIREBASE_BOM_VERSION` to override SDK versions for different platforms:
     
     $ cordova plugin add cordova-plugin-firebase-analytics \
-        --variable IOS_FIREBASE_POD_VERSION="9.3.0" \
+        --variable IOS_FIREBASE_SDK_VERSION="9.3.0" \
         --variable ANDROID_FIREBASE_BOM_VERSION="30.3.1"
 
 NOTE: on iOS in order to collect demographic, age, gender data etc. you should additionally [include `AdSupport.framework`](https://firebase.google.com/support/guides/analytics-adsupport) into your project.
+
+**For cordova-ios below version 8**: if you get an error about CocoaPods being unable to find compatible versions, run
+
+    $ pod repo update
 
 ### Disabling analytics data collection
 In some cases, you may wish to temporarily or permanently disable collection of Analytics data. You can set the value of variable `ANALYTICS_COLLECTION_ENABLED` to `false` to prevent collecting any user data:
