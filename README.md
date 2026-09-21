@@ -49,8 +49,8 @@ If you get an error about CocoaPods being unable to find compatible versions, ru
 Use variables `IOS_FIREBASE_SDK_VERSION` and `ANDROID_FIREBASE_BOM_VERSION` to override SDK versions for different platforms:
     
     $ cordova plugin add cordova-plugin-firebase-analytics \
-        --variable IOS_FIREBASE_SDK_VERSION="9.3.0" \
-        --variable ANDROID_FIREBASE_BOM_VERSION="30.3.1"
+        --variable IOS_FIREBASE_SDK_VERSION="12.19.1" \
+        --variable ANDROID_FIREBASE_BOM_VERSION="34.19.0"
 
 NOTE: on iOS in order to collect demographic, age, gender data etc. you should additionally [include `AdSupport.framework`](https://firebase.google.com/support/guides/analytics-adsupport) into your project.
 

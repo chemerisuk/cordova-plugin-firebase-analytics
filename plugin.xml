@@ -24,7 +24,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     <preference name="AUTOMATIC_SCREEN_REPORTING_ENABLED" default="true" />
 
     <platform name="ios" package="swift">
-        <preference name="IOS_FIREBASE_SDK_VERSION" default="12.16.0" />
+        <preference name="IOS_FIREBASE_SDK_VERSION" default="12.19.1" />
 
         <config-file target="config.xml" parent="/*">
             <feature name="FirebaseAnalytics">
@@ -60,7 +60,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     </platform>
 
     <platform name="android">
-        <preference name="ANDROID_FIREBASE_BOM_VERSION" default="34.16.0" />
+        <preference name="ANDROID_FIREBASE_BOM_VERSION" default="34.19.0" />
 
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="FirebaseAnalytics">
